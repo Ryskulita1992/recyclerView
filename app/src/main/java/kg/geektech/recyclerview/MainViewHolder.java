@@ -1,5 +1,6 @@
 package kg.geektech.recyclerview;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -8,12 +9,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 public class MainViewHolder extends RecyclerView.ViewHolder{
-    TextView firsIstName, secondIsSurname,thirdIsDOBirth;
+    TextView firstLine, secondLine,thirdLine;
     public MainViewHolder(@NonNull View itemView) {
         super(itemView);
-        firsIstName=itemView.findViewById(R.id.view_name);
-        secondIsSurname=itemView.findViewById(R.id.view_surname);
-        thirdIsDOBirth=itemView.findViewById(R.id.view_date_of_birth);
+        firstLine=itemView.findViewById(R.id.view_name);
+        secondLine=itemView.findViewById(R.id.view_surname);
+        thirdLine=itemView.findViewById(R.id.view_date_of_birth);
+        Log.d("View Holder", "");
+
+
+
+
+
     }
 
 }

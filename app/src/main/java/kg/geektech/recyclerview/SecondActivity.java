@@ -12,12 +12,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class SecondActivity<T> extends AppCompatActivity {
-    public TextView addedName;
-    public TextView addedSurname;
-    public TextView addedDateOfBirth;
-    T info;
-
+public class SecondActivity extends AppCompatActivity {
+    public TextView addedName, addedSurname, addedDateOfBirth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +22,16 @@ public class SecondActivity<T> extends AppCompatActivity {
         addedName=findViewById(R.id.name);
         addedSurname=findViewById(R.id.surname);
         addedDateOfBirth=findViewById(R.id.date_of_birth);
+        Log.d("Method onCreate", "");
+
     }
 
     public void save(View view) {
-
-        ArrayList <T> info =new ArrayList<>();
-        info.add((T) addedName.getText().toString());
-        info.add((T) addedSurname.getText().toString());
-        info.add((T) addedDateOfBirth.getText());
-        Intent save = new Intent(SecondActivity.this, MainActivity.class);
+        ArrayList <String>info=new ArrayList<>();
+        info.add(String.valueOf(addedName));
+        info.add(String.valueOf(addedSurname));
+        info.add(String.valueOf(addedDateOfBirth));
+        Intent save = new Intent();
         save.putExtra("Student", info);
         setResult(RESULT_OK, save);
         finish();
