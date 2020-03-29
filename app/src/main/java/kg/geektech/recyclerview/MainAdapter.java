@@ -27,9 +27,7 @@ public class MainAdapter extends RecyclerView.Adapter <MainViewHolder> {
         LayoutInflater  MainViewHolder=LayoutInflater.from (parent.getContext()); //sozdaet view po cherteju xml
         View v=  MainViewHolder.inflate(R.layout.view_holder_main,parent, false);
         return new MainViewHolder(v);
-
-
-
+        
     }
     @Override
     public void onBindViewHolder//vyzyvaetsya kogda recycler nujno zapolnit dannymi

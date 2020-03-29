@@ -12,7 +12,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity<T> extends AppCompatActivity {
+    ArrayList <T>info=new ArrayList<>();
+
     public TextView addedName, addedSurname, addedDateOfBirth;
 
     @Override
@@ -27,10 +29,9 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
-        ArrayList <String>info=new ArrayList<>();
-        info.add(String.valueOf(addedName));
-        info.add(String.valueOf(addedSurname));
-        info.add(String.valueOf(addedDateOfBirth));
+        info.add((T) addedName.getText().toString());
+        info.add((T) addedSurname.getText().toString());
+        info.add((T) addedDateOfBirth.getText().toString());
         Intent save = new Intent();
         save.putExtra("Student", info);
         setResult(RESULT_OK, save);
